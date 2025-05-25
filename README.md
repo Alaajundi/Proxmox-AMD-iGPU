@@ -106,8 +106,8 @@ cpu: host
 machine: q35
 memory: 16384
 meta: creation-qemu=8.1.5,ctime=1732550400
-name: jellyfin-gpu
-net0: virtio=BC:24:11:12:34:56,bridge=vmbr0,firewall=1
+name: vm-example
+net0: virtio=AA:BB:CC:DD:EE:FF,bridge=vmbr0,firewall=1
 numa: 1
 ostype: l26
 parent: gpu-working
@@ -133,7 +133,7 @@ efidisk0: ZFS-VMs:vm-108-disk-0,efitype=4m,pre-enrolled-keys=1,size=1M
 cicustom: vendor=ZFS-VMs:snippets/vendor.yaml
 cipassword: $6$rounds=500000$... (hashed password)
 ciuser: ubuntu
-ipconfig0: ip=192.168.0.233/24,gw=192.168.0.1
+ipconfig0: ip=192.168.1.100/24,gw=192.168.1.1
 nameserver: 8.8.8.8
 searchdomain: local
 sshkeys: ssh-rsa AAAAB3NzaC1yc... (your SSH key)
@@ -187,8 +187,8 @@ iface eno1 inet manual
 
 auto vmbr0
 iface vmbr0 inet static
-    address 192.168.0.100/24
-    gateway 192.168.0.1
+    address 192.168.1.50/24
+    gateway 192.168.1.1
     bridge-ports eno1
     bridge-stp off
     bridge-fd 0
